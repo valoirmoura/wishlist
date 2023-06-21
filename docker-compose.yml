@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_wish
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: wishlist
+      MONGO_INITDB_DATABASE: wishlist
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb:/data/dbx
+
+volumes:
+  mongodb:
